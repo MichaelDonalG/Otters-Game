@@ -1,0 +1,17 @@
+res://Characters/Cow2.tres::ec608da036a60f7c74ed8d6a7526fa56::1736374964::res://.godot/exported/133200997/export-b22d0bbb9d3ae647f63e65a2301a6925-Cow2.res
+res://Characters/Cow.tres::29ea1a3b5d14f3158c8b8bdb6e6bceac::1757491517::res://.godot/exported/133200997/export-0f5195df1e0747510c9eb9248e1d6415-Cow.res
+res://Characters/cow.tscn::64d5b07c4cfb733f5c02c2470c707f75::1731096870::res://.godot/exported/133200997/export-325ee1438ec4eebb3bb4a7fe5fc803e3-cow.scn
+res://Characters/enemy.tscn::d8df1c6f13b7c4485c111b48ff66468b::1731096870::res://.godot/exported/133200997/export-6e0edf1d32b70994c9b7c2b7f9590c41-enemy.scn
+res://Characters/follower.tscn::27383974da8304032d6b83d785289672::1757496109::res://.godot/exported/133200997/export-6c631da0ad4f0aef0319355db76c1457-follower.scn
+res://Characters/player_character.tscn::4b60dd8c0af44a1f04b57ce3b60bce0f::1757496109::res://.godot/exported/133200997/export-d03b5edf31719a5fb737cfe89a4f3d28-player_character.scn
+res://Levels/battle.tscn::736908bce132269e99625688b65e7a4e::1757496135::res://.godot/exported/133200997/export-cf736a181b34c3b07324ccd03bbe150e-battle.scn
+res://Levels/game_level2.tscn::8c961b70c7606e7a08ce28a3e902b606::1731096870::res://.godot/exported/133200997/export-cc02850c829ec1b8cef870a3a4678f05-game_level2.scn
+res://Levels/game_level.tscn::888f8a3a8f0763a46ba7cc969b26dfca::1757496109::res://.godot/exported/133200997/export-ec4230ce141bf454e89e40ab1995a0d6-game_level.scn
+res://Levels/main_menu.tscn::f245c2b399ebfd68cc60a3053a7068f7::1757496108::res://.godot/exported/133200997/export-df676ec93d3c3c099244abcab131f9f7-main_menu.scn
+res://Objects/bed.tscn::3ebc4d0ef6e3e72fa967bc7d21fb652c::1731096875::res://.godot/exported/133200997/export-ab85713cb1733a6618bfb5e042e3fa2d-bed.scn
+res://Objects/beds.tscn::48bb9c36ac8eda317edc0ad9439707db::1731096876::res://.godot/exported/133200997/export-806c58633c595a9028a40f0c3b016ed4-beds.scn
+res://Objects/chest.tscn::2cd3ea5b49c03627ead745e32c4d1be6::1731096876::res://.godot/exported/133200997/export-aaa47003130ee713158f33ed90c0a3c0-chest.scn
+res://Objects/Door.tscn::67e092c595c8c66c79d95dc9df5613fa::1731096875::res://.godot/exported/133200997/export-97525e55a3a2f387815573125eeb7403-Door.scn
+res://Objects/furniture.tscn::48bb9c36ac8eda317edc0ad9439707db::1731096876::res://.godot/exported/133200997/export-f2fd1312c289d4fba1232d12fee2cfc8-furniture.scn
+res://Objects/Furniture_Sprite.tscn::38fda800134c1b599893369bc3f3cc84::1731096875::res://.godot/exported/133200997/export-e2af58ce63204ec5a985d82c86228814-Furniture_Sprite.scn
+res://Objects/Table.tscn::22ca9028fe70f5ee217762a3192dd9ba::1731096875::res://.godot/exported/133200997/export-e5998be85aea831dc2de476df7050389-Table.scn
