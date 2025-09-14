@@ -1,8 +1,20 @@
 extends Node
 
-var current_health = 50
-var max_health = 50
-var damage = 20
+var pos1Char : String = "Peepo"
+var pos2Char : String = "empty"
+var pos3Char : String = "empty"
+
+var P1_current_health = 50
+var P1_max_health = 50
+var P1_damage = 20
+
+var P2_current_health = 50
+var P2_max_health = 50
+var P2_damage = 20
+
+var P3_current_health = 50
+var P3_max_health = 50
+var P3_damage = 20
 
 var enemy_type1 = null
 var enemy_type2 = null

@@ -1,3 +1,10 @@
+VBoxContainer
+TextureRect
+Button
+TextureButton
+ColorRect
+Container
+HBoxContainer
+PanelContainer
 AnimationPlayer
 AnimationTree
-Button

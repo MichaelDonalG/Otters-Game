@@ -21,7 +21,8 @@ func _ready():
 		State.playerx = null
 		State.playery = null
 		State.enemy2 = null
-	set_health($"../Camera2D/PlayerPanel/PlayerData/ProgressBar")
+	set_health()
+
 
 #########################Player Movement#########################
 
@@ -31,6 +32,11 @@ func _physics_process(_delta):
 		Input.get_action_strength("right") - Input.get_action_strength("left"),
 		Input.get_action_strength("down") - Input.get_action_strength("up")
 	)
+	
+	if Input.is_action_just_pressed("pause"):
+		if get_tree().paused == false:
+			get_tree().paused = true
+			$"../Camera2D/Character_select_menu".show()
 	
 	if Input.is_action_just_pressed("interact"):
 		execute_interaction()
@@ -102,13 +108,33 @@ func execute_interaction():
 				interactLabel.text = "Empty..."
 			"bed" :
 				interactLabel.text = "Feeling rested"
-				State.current_health = State.max_health
-				set_health($"../Camera2D/PlayerPanel/PlayerData/ProgressBar") 
+				State.P1_current_health = State.P1_max_health
+				set_health() 
 
 ###############UI Functions#############
-func set_health(progress_bar):
-	progress_bar.value = State.current_health
-	progress_bar.max_value = State.max_health
+func set_health():
+	$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData/Label".text = State.pos1Char
+	$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData/ProgressBar".value = State.P1_current_health
+	$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData/ProgressBar".max_value = State.P1_max_health
+	if State.pos2Char == "empty":
+		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2/Label".text = "empty"
+		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2".hide()
+		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3".hide()
+	else:
+		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2/Label".text = State.pos2Char
+		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2".show()
+		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3".show()
+		
+		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2/ProgressBar".value = State.P2_current_health
+		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2/ProgressBar".max_value = State.P2_max_health
+		
+		if State.pos3Char == "empty":
+			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3/Label".text = "empty"
+			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3".hide()
+		else:
+			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3/Label".text = State.pos3Char
+			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3/ProgressBar".value = State.P1_current_health
+			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3/ProgressBar".max_value = State.P1_max_health
 
 ################Follower Functions######################
 func add_point_to_path(new_point: Vector2):
@@ -116,3 +142,16 @@ func add_point_to_path(new_point: Vector2):
 
 func remove_point_from_path(index: int):
 	$"../Path2D".curve.remove_point(index)
+
+
+func _on_character_select_menu_gui_input(event: InputEvent) -> void:
+	set_health()
+	match State.pos1Char:
+		"Peepo":
+			$Sprite2D.texture = load("res://Art/Peepo/peepo.png")
+		"Starlorn":
+			$Sprite2D.texture = load("res://Art/Starlorn/Starlorn.png")
+		"Ana":
+			$Sprite2D.texture = load("res://Art/Ana/Ana.png")
+		"Cyrus":
+			$Sprite2D.texture = load("res://Art/Cyrus/Cyrus.png")

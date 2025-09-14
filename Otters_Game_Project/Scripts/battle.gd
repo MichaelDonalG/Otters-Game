@@ -20,9 +20,13 @@ func _ready():
 	
 	
 	####SET PLAYER START####
-	set_health($PlayerPanel/PlayerData/ProgressBar, State.current_health, State.max_health) 
+	$player.texture = load("res://Art/Battle Icons/"+ State.pos1Char +".png")
+	$player2.texture = load("res://Art/Battle Icons/"+State.pos2Char+".png")
 	
-	current_player_health = State.current_health
+	set_health($PlayerPanel/PlayerData/ProgressBar, State.P1_max_health, State.P1_max_health) 
+	
+	
+	current_player_health = State.P1_max_health
 	
 	####SET PLAYER COMPLETE####
 	####SET ENEMY START####
@@ -79,14 +83,14 @@ func enemy_turn():
 		if is_defending:
 			is_defending = false
 			current_player_health = max(0, current_player_health - enemy1.damage/2)
-			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.max_health)
+			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.P1_max_health)
 			
 			$player/AnimationPlayer.play("player_damaged")
 			await($player/AnimationPlayer.animation_finished)
 			paused = 0
 		else:
 			current_player_health = max(0, current_player_health - enemy1.damage)
-			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.max_health)
+			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.P1_max_health)
 			
 			$player/AnimationPlayer.play("player_damaged")
 			await($player/AnimationPlayer.animation_finished)
@@ -102,14 +106,14 @@ func enemy_turn():
 		if is_defending:
 			is_defending = false
 			current_player_health = max(0, current_player_health - enemy2.damage/2)
-			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.max_health)
+			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.P1_max_health)
 			
 			$player/AnimationPlayer.play("player_damaged")
 			await($player/AnimationPlayer.animation_finished)
 			paused = 0
 		else:
 			current_player_health = max(0, current_player_health - enemy2.damage)
-			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.max_health)
+			set_health($PlayerPanel/PlayerData/ProgressBar, current_player_health, State.P1_max_health)
 			
 			$player/AnimationPlayer.play("player_damaged")
 			await($player/AnimationPlayer.animation_finished)
@@ -120,7 +124,7 @@ func enemy_turn():
 func _on_run_pressed():
 	display_text("Got away safely")
 	await(get_tree().create_timer(0.5).timeout)
-	State.current_health = current_player_health
+	State.P1_max_health = current_player_health
 	get_tree().change_scene_to_file("res://Levels/game_level.tscn")
 
 
@@ -147,7 +151,7 @@ func _on_attack_enemy_1_pressed():
 	display_text("You attack")
 	await get_tree().create_timer(1.0). timeout
 	
-	enemy1_health = max(0, enemy1_health - State.damage)
+	enemy1_health = max(0, enemy1_health - State.P1_damage)
 	set_health($EnemyContainer/VBoxContainer/ProgressBar, enemy1_health, enemy1.health)
 	
 	$AnimationPlayer.play("enemy1_damaged")
@@ -171,7 +175,7 @@ func _on_attack_enemy_2_pressed():
 	display_text("You attack")
 	await get_tree().create_timer(1.0). timeout
 	
-	enemy2_health = max(0, enemy2_health - State.damage)
+	enemy2_health = max(0, enemy2_health - State.P1_damage)
 	set_health($EnemyContainer2/VBoxContainer/ProgressBar, enemy2_health, enemy2.health)
 	
 	$AnimationPlayer.play("enemy2_damaged")
@@ -189,7 +193,7 @@ func _on_attack_enemy_2_pressed():
 
 func check_if_victory():
 	if enemy1_status == "dead" && enemy2_status == "dead":
-		State.current_health = current_player_health
+		State.P1_max_health = current_player_health
 		State.remove_enemy()
 		get_tree().change_scene_to_file("res://Levels/game_level.tscn")
 	else:

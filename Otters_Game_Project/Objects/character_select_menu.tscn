@@ -1,0 +1,93 @@
+[gd_scene load_steps=8 format=3 uid="uid://suqchad43hub"]
+
+[ext_resource type="Script" path="res://Scripts/player_select_menu.gd" id="1_0xfxj"]
+[ext_resource type="Texture2D" uid="uid://ctavw7e8qa76e" path="res://Art/Menu Icons/Peepo.png" id="1_xs7ii"]
+[ext_resource type="Texture2D" uid="uid://d36cu41vkw851" path="res://Art/Menu Icons/PlayerPosition1.png" id="2_28tpt"]
+[ext_resource type="Texture2D" uid="uid://c6ddss5yck6wb" path="res://Art/Menu Icons/Starlorn.png" id="2_wnnrb"]
+[ext_resource type="Texture2D" uid="uid://cs8fyixqtdxgx" path="res://Art/Menu Icons/Ana.png" id="3_6ff70"]
+[ext_resource type="Texture2D" uid="uid://bwmfsn4jfwls8" path="res://Art/Menu Icons/Cyrus.png" id="4_tanh6"]
+[ext_resource type="FontFile" uid="uid://b34pemj15bf37" path="res://alagard.ttf" id="7_toivh"]
+
+[node name="Character_select_menu" type="Control"]
+process_mode = 3
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_0xfxj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 407.0
+offset_bottom = 229.0
+color = Color(0.635294, 1, 1, 0.737255)
+
+[node name="Row1" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 27.4
+offset_top = 16.2
+offset_right = 1673.4
+offset_bottom = 452.2
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+theme_override_constants/separation = 335
+alignment = 1
+
+[node name="Position1" type="TextureButton" parent="Row1"]
+layout_mode = 2
+texture_normal = ExtResource("1_xs7ii")
+
+[node name="Position2" type="TextureButton" parent="Row1"]
+layout_mode = 2
+texture_normal = ExtResource("2_28tpt")
+
+[node name="Position3" type="TextureButton" parent="Row1"]
+layout_mode = 2
+texture_normal = ExtResource("2_28tpt")
+
+[node name="Row2" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 27.0
+offset_top = 120.0
+offset_right = 1674.0
+offset_bottom = 522.0
+scale = Vector2(0.2, 0.2)
+alignment = 1
+
+[node name="Peepo" type="TextureButton" parent="Row2"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("1_xs7ii")
+stretch_mode = 3
+
+[node name="Starlorn" type="TextureButton" parent="Row2"]
+layout_mode = 2
+texture_normal = ExtResource("2_wnnrb")
+
+[node name="Ana" type="TextureButton" parent="Row2"]
+layout_mode = 2
+texture_normal = ExtResource("3_6ff70")
+
+[node name="Cyrus" type="TextureButton" parent="Row2"]
+layout_mode = 2
+texture_normal = ExtResource("4_tanh6")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 198.0
+offset_right = 407.0
+offset_bottom = 229.0
+theme_override_fonts/font = ExtResource("7_toivh")
+text = "Back"
+
+[connection signal="pressed" from="Row1/Position1" to="." method="_on_position_1_pressed"]
+[connection signal="pressed" from="Row1/Position2" to="." method="_on_position_2_pressed"]
+[connection signal="pressed" from="Row1/Position3" to="." method="_on_position_3_pressed"]
+[connection signal="button_up" from="Row2/Peepo" to="." method="_on_peepo_button_up"]
+[connection signal="button_up" from="Row2/Starlorn" to="." method="_on_starlorn_button_up"]
+[connection signal="button_up" from="Row2/Ana" to="." method="_on_ana_button_up"]
+[connection signal="button_up" from="Row2/Cyrus" to="." method="_on_cyrus_button_up"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
