@@ -11,10 +11,22 @@ const MOVE_UP : Vector2 = Vector2(0,-1)
 const MOVE_LEFT : Vector2 = Vector2(-1,0)
 const MOVE_RIGTH : Vector2 = Vector2(1,0)
 
+var text_array = Array()
+var text_counter = 0
+
 var follower_counter = 0
 
 func _ready():
 	update_animation_paramaeters(starting_direction)
+	match State.pos1Char:
+		"Peepo":
+			$Sprite2D.texture = load("res://Art/Peepo/peepo.png")
+		"Starlorn":
+			$Sprite2D.texture = load("res://Art/Starlorn/Starlorn.png")
+		"Ana":
+			$Sprite2D.texture = load("res://Art/Ana/Ana.png")
+		"Cyrus":
+			$Sprite2D.texture = load("res://Art/Cyrus/Cyrus.png")
 	if (State.playerx != null):
 		position.x = State.playerx
 		position.y = State.playery
@@ -36,7 +48,7 @@ func _physics_process(_delta):
 	if Input.is_action_just_pressed("pause"):
 		if get_tree().paused == false:
 			get_tree().paused = true
-			$"../Camera2D/Character_select_menu".show()
+			$Character_select_menu.show()
 	
 	if Input.is_action_just_pressed("interact"):
 		execute_interaction()
@@ -105,7 +117,11 @@ func execute_interaction():
 		var cur_interaction = all_interactions[0]
 		match  cur_interaction.interact_type:
 			"chest" : 
-				interactLabel.text = "Empty..."
+				$TextBox.show()
+				text_array = cur_interaction.text
+				if text_array.is_empty() == false:
+					$TextBox/Text.text = text_array[text_counter]
+					get_tree().paused = true
 			"bed" :
 				interactLabel.text = "Feeling rested"
 				State.P1_current_health = State.P1_max_health
@@ -113,28 +129,28 @@ func execute_interaction():
 
 ###############UI Functions#############
 func set_health():
-	$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData/Label".text = State.pos1Char
-	$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData/ProgressBar".value = State.P1_current_health
-	$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData/ProgressBar".max_value = State.P1_max_health
+	$PlayerPanel/VBoxContainer/PlayerData/Label.text = State.pos1Char
+	$PlayerPanel/VBoxContainer/PlayerData/ProgressBar.value = State.P1_current_health
+	$PlayerPanel/VBoxContainer/PlayerData/ProgressBar.max_value = State.P1_max_health
 	if State.pos2Char == "empty":
-		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2/Label".text = "empty"
-		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2".hide()
-		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3".hide()
+		$PlayerPanel/VBoxContainer/PlayerData2/Label.text = "empty"
+		$PlayerPanel/VBoxContainer/PlayerData2.hide()
+		$PlayerPanel/VBoxContainer/PlayerData3.hide()
 	else:
-		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2/Label".text = State.pos2Char
-		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2".show()
-		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3".show()
+		$PlayerPanel/VBoxContainer/PlayerData2/Label.text = State.pos2Char
+		$PlayerPanel/VBoxContainer/PlayerData2.show()
+		$PlayerPanel/VBoxContainer/PlayerData3.show()
 		
-		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2/ProgressBar".value = State.P2_current_health
-		$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData2/ProgressBar".max_value = State.P2_max_health
+		$PlayerPanel/VBoxContainer/PlayerData2/ProgressBar.value = State.P2_current_health
+		$PlayerPanel/VBoxContainer/PlayerData2/ProgressBar.max_value = State.P2_max_health
 		
 		if State.pos3Char == "empty":
-			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3/Label".text = "empty"
-			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3".hide()
+			$PlayerPanel/VBoxContainer/PlayerData3/Label.text = "empty"
+			$PlayerPanel/VBoxContainer/PlayerData3.hide()
 		else:
-			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3/Label".text = State.pos3Char
-			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3/ProgressBar".value = State.P1_current_health
-			$"../Camera2D/PlayerPanel/VBoxContainer/PlayerData3/ProgressBar".max_value = State.P1_max_health
+			$PlayerPanel/VBoxContainer/PlayerData3/Label.text = State.pos3Char
+			$PlayerPanel/VBoxContainer/PlayerData3/ProgressBar.value = State.P1_current_health
+			$Camera2D/PlayerPanel/VBoxContainer/PlayerData3/ProgressBar.max_value = State.P1_max_health
 
 ################Follower Functions######################
 func add_point_to_path(new_point: Vector2):
@@ -155,3 +171,13 @@ func _on_character_select_menu_gui_input(event: InputEvent) -> void:
 			$Sprite2D.texture = load("res://Art/Ana/Ana.png")
 		"Cyrus":
 			$Sprite2D.texture = load("res://Art/Cyrus/Cyrus.png")
+
+
+func _on_button_pressed() -> void:
+	if text_array.size() == text_counter+1:
+		text_counter = 0
+		get_tree().paused = false
+		$TextBox.hide()
+	else:
+		text_counter = text_counter + 1
+		$TextBox/Text.text = text_array[text_counter]

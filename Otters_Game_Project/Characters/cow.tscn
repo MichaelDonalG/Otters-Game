@@ -107,7 +107,6 @@ libraries = {
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_mqn1w")
 anim_player = NodePath("../AnimationPlayer")
-active = true
 
 [node name="Timer" type="Timer" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bqbeei4uh2u1u"]
+[gd_scene load_steps=20 format=3 uid="uid://bqbeei4uh2u1u"]
 
 [ext_resource type="PackedScene" uid="uid://c0fl7v1ttlh88" path="res://Characters/player_character.tscn" id="1_2ojkx"]
 [ext_resource type="PackedScene" uid="uid://del4oy7ack5g7" path="res://Characters/follower.tscn" id="2_2vw67"]
@@ -11,26 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dv6y8bw5athsf" path="res://Characters/cow.tscn" id="7_jwilg"]
 [ext_resource type="PackedScene" uid="uid://bx8o4pgktgr3e" path="res://Objects/chest.tscn" id="8_uf47h"]
 [ext_resource type="PackedScene" uid="uid://n73arlyrpf4l" path="res://Objects/Door.tscn" id="10_n4ai5"]
-[ext_resource type="PackedScene" uid="uid://suqchad43hub" path="res://Objects/character_select_menu.tscn" id="12_em68l"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nv01q"]
-bg_color = Color(0, 0, 0, 0.486275)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqfdh"]
-bg_color = Color(1, 0, 0.109804, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6rkl5"]
-bg_color = Color(0.0862745, 0.72549, 0, 1)
-border_width_left = 1
-border_width_top = 1
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkj3y"]
 texture = ExtResource("2_skonu")
@@ -249,97 +229,6 @@ position = Vector2(153, 108)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(47, 25)
 
-[node name="Character_select_menu" parent="Camera2D" instance=ExtResource("12_em68l")]
-visible = false
-z_index = 5
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -196.0
-offset_top = -116.0
-offset_right = -196.0
-offset_bottom = -116.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PlayerPanel" type="Panel" parent="Camera2D"]
-z_index = 6
-offset_left = 117.0
-offset_top = 113.0
-offset_right = 587.0
-offset_bottom = 228.0
-scale = Vector2(0.2, 0.2)
-theme_override_styles/panel = SubResource("StyleBoxFlat_nv01q")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Camera2D/PlayerPanel"]
-layout_mode = 0
-offset_right = 470.0
-offset_bottom = 40.0
-theme_override_constants/separation = 23
-alignment = 1
-
-[node name="PlayerData" type="HBoxContainer" parent="Camera2D/PlayerPanel/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Camera2D/PlayerPanel/VBoxContainer/PlayerData"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Player"
-
-[node name="ProgressBar" type="ProgressBar" parent="Camera2D/PlayerPanel/VBoxContainer/PlayerData"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_styles/background = SubResource("StyleBoxFlat_cqfdh")
-theme_override_styles/fill = SubResource("StyleBoxFlat_6rkl5")
-step = 1.0
-value = 50.0
-show_percentage = false
-
-[node name="PlayerData2" type="HBoxContainer" parent="Camera2D/PlayerPanel/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Camera2D/PlayerPanel/VBoxContainer/PlayerData2"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Player"
-
-[node name="ProgressBar" type="ProgressBar" parent="Camera2D/PlayerPanel/VBoxContainer/PlayerData2"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_styles/background = SubResource("StyleBoxFlat_cqfdh")
-theme_override_styles/fill = SubResource("StyleBoxFlat_6rkl5")
-step = 1.0
-value = 50.0
-show_percentage = false
-
-[node name="PlayerData3" type="HBoxContainer" parent="Camera2D/PlayerPanel/VBoxContainer"]
-layout_mode = 2
-alignment = 1
-
-[node name="Label" type="Label" parent="Camera2D/PlayerPanel/VBoxContainer/PlayerData3"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Player"
-
-[node name="ProgressBar" type="ProgressBar" parent="Camera2D/PlayerPanel/VBoxContainer/PlayerData3"]
-custom_minimum_size = Vector2(0, 20)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 4
-theme_override_styles/background = SubResource("StyleBoxFlat_cqfdh")
-theme_override_styles/fill = SubResource("StyleBoxFlat_6rkl5")
-step = 1.0
-value = 50.0
-show_percentage = false
-
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_2ojkx")]
 z_index = 1
 y_sort_enabled = true
@@ -383,6 +272,7 @@ enemy_type2 = "cow"
 enemy_num = 4
 
 [node name="Chest" parent="." instance=ExtResource("8_uf47h")]
+text = ["Damn, empty", "Why tf these all empty fr fr on god"]
 
 [node name="Chest2" parent="." instance=ExtResource("8_uf47h")]
 position = Vector2(102, 107)
@@ -403,5 +293,3 @@ rotates = false
 loop = false
 
 [node name="CharacterBody2D" parent="Path2D/PathFollow2D" instance=ExtResource("2_2vw67")]
-
-[connection signal="gui_input" from="Camera2D/Character_select_menu" to="PlayerCharacter" method="_on_character_select_menu_gui_input"]

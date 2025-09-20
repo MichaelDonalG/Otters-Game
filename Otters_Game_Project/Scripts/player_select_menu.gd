@@ -1,8 +1,14 @@
 extends Control
 
-var counter = 1 # Counter for which Position needs to be filled next
+var counter # Counter for which Position needs to be filled next
 
 func _ready() -> void: # Whenever scene loads remind Menu who is where
+	if State.pos2Char == "empty":
+		counter = 1
+	elif State.pos3Char == "empty":
+		counter = 2
+	else:
+		counter = 3
 	match State.pos1Char: # Check who is now in Pos1 and set the image accordingly 
 		"Peepo":
 			$Row1/Position1.texture_normal = load("res://Art/Menu Icons/Peepo.png")

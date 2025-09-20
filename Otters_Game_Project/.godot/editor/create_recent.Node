@@ -1,10 +1,11 @@
-VBoxContainer
-TextureRect
+AnimationPlayer
+Label
+Container
 Button
+TextureRect
+VBoxContainer
 TextureButton
 ColorRect
-Container
 HBoxContainer
 PanelContainer
-AnimationPlayer
 AnimationTree

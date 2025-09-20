@@ -3,6 +3,7 @@ class_name Interaction extends Area2D
 @export var interact_type = "none"
 @export var interact_label = "none"
 @export var interact_value = "none"
+@export var text: Array
 
 @onready var interactable = 0
 

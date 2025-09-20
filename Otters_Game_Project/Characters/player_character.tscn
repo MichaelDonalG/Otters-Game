@@ -1,7 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://c0fl7v1ttlh88"]
+[gd_scene load_steps=23 format=3 uid="uid://c0fl7v1ttlh88"]
 
 [ext_resource type="Script" path="res://Scripts/player_character.gd" id="1_12e7s"]
 [ext_resource type="Texture2D" uid="uid://c7q44v18ouelr" path="res://Art/Cyrus/Cyrus.png" id="2_n27h1"]
+[ext_resource type="FontFile" uid="uid://b34pemj15bf37" path="res://alagard.ttf" id="3_3h7eb"]
+[ext_resource type="Texture2D" uid="uid://b57keuogftxdc" path="res://Art/Dialogue Icons/Starlorn.png" id="4_jmgrc"]
+[ext_resource type="PackedScene" uid="uid://suqchad43hub" path="res://Objects/character_select_menu.tscn" id="5_ob4og"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs5tp"]
 size = Vector2(6, 9.5)
@@ -19,6 +22,57 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cwc4q"]
+resource_name = "idle_down"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 2]
+}
+
+[sub_resource type="Animation" id="Animation_7m1u6"]
+resource_name = "idle_left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 9]
+}
+
+[sub_resource type="Animation" id="Animation_n5saj"]
+resource_name = "idle_right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [12, 13]
 }
 
 [sub_resource type="Animation" id="Animation_5wpwj"]
@@ -106,57 +160,6 @@ tracks/0/keys = {
 "values": [3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_n5saj"]
-resource_name = "idle_right"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [12, 13]
-}
-
-[sub_resource type="Animation" id="Animation_7m1u6"]
-resource_name = "idle_left"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [8, 9]
-}
-
-[sub_resource type="Animation" id="Animation_cwc4q"]
-resource_name = "idle_down"
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 2]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_swch4"]
 _data = {
 "RESET": SubResource("Animation_winau"),
@@ -171,6 +174,36 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_behft"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejvpy"]
+bg_color = Color(0, 0, 0, 0.486275)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbx5u"]
+bg_color = Color(1, 0, 0.109804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvqx8"]
+bg_color = Color(0.0862745, 0.72549, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21rg6"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lc3c6"]
+font = ExtResource("3_3h7eb")
 
 [node name="PlayerCharacter" type="CharacterBody2D"]
 script = ExtResource("1_12e7s")
@@ -206,5 +239,158 @@ offset_right = 1343.0
 scale = Vector2(0.597593, 0.64603)
 horizontal_alignment = 1
 
+[node name="PlayerPanel" type="Panel" parent="."]
+z_index = 6
+offset_left = 117.0
+offset_top = 111.0
+offset_right = 587.0
+offset_bottom = 226.0
+scale = Vector2(0.2, 0.2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_ejvpy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerPanel"]
+layout_mode = 0
+offset_right = 470.0
+offset_bottom = 40.0
+theme_override_constants/separation = 23
+alignment = 1
+
+[node name="PlayerData" type="HBoxContainer" parent="PlayerPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PlayerPanel/VBoxContainer/PlayerData"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player"
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/VBoxContainer/PlayerData"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_pbx5u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fvqx8")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="PlayerData2" type="HBoxContainer" parent="PlayerPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PlayerPanel/VBoxContainer/PlayerData2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player"
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/VBoxContainer/PlayerData2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_pbx5u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fvqx8")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="PlayerData3" type="HBoxContainer" parent="PlayerPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PlayerPanel/VBoxContainer/PlayerData3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Player"
+
+[node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/VBoxContainer/PlayerData3"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_pbx5u")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fvqx8")
+step = 1.0
+value = 50.0
+show_percentage = false
+
+[node name="TextBox" type="Panel" parent="."]
+process_mode = 3
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+visible = false
+z_index = 100
+offset_left = -234.0
+offset_top = 76.0
+offset_right = 116.0
+offset_bottom = 134.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_21rg6")
+
+[node name="Text" type="Label" parent="TextBox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 43.0
+offset_top = 4.0
+offset_right = 10.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_3h7eb")
+text = "Text Goes Here"
+
+[node name="Ticker" type="Label" parent="TextBox"]
+layout_mode = 0
+offset_left = 339.0
+offset_top = 24.0
+offset_right = 379.0
+offset_bottom = 50.0
+theme_override_fonts/font = ExtResource("3_3h7eb")
+text = ">"
+
+[node name="TextureRect" type="TextureRect" parent="TextBox"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 102.0
+offset_bottom = 102.0
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_jmgrc")
+
+[node name="Button" type="Button" parent="TextBox"]
+layout_mode = 0
+offset_right = 350.0
+offset_bottom = 58.0
+flat = true
+
+[node name="Label" type="Label" parent="TextBox"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 43.0
+offset_right = 63.0
+offset_bottom = 58.0
+text = "Starlorn"
+label_settings = SubResource("LabelSettings_lc3c6")
+
+[node name="Character_select_menu" parent="." instance=ExtResource("5_ob4og")]
+visible = false
+z_index = 5
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = -116.0
+offset_right = -196.0
+offset_bottom = -116.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]
+[connection signal="pressed" from="TextBox/Button" to="." method="_on_button_pressed"]
+[connection signal="gui_input" from="Character_select_menu" to="." method="_on_character_select_menu_gui_input"]

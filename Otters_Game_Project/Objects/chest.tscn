@@ -47,12 +47,17 @@ _data = {
 }
 
 [node name="Chest" type="Area2D"]
+process_mode = 3
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_ga77n")
 interact_type = "chest"
 interact_label = "Press E to open"
 interact_value = "Empty.."
+text = ["Empty"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_1fw8t")
