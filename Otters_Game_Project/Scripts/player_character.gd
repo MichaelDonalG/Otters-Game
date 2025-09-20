@@ -150,7 +150,7 @@ func set_health():
 		else:
 			$PlayerPanel/VBoxContainer/PlayerData3/Label.text = State.pos3Char
 			$PlayerPanel/VBoxContainer/PlayerData3/ProgressBar.value = State.P1_current_health
-			$Camera2D/PlayerPanel/VBoxContainer/PlayerData3/ProgressBar.max_value = State.P1_max_health
+			$PlayerPanel/VBoxContainer/PlayerData3/ProgressBar.max_value = State.P1_max_health
 
 ################Follower Functions######################
 func add_point_to_path(new_point: Vector2):
@@ -160,7 +160,7 @@ func remove_point_from_path(index: int):
 	$"../Path2D".curve.remove_point(index)
 
 
-func _on_character_select_menu_gui_input(event: InputEvent) -> void:
+func _on_character_select_menu_gui_input() -> void:
 	set_health()
 	match State.pos1Char:
 		"Peepo":

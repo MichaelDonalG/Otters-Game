@@ -1,0 +1,8 @@
+res://Characters/player_character.tscn
+res://Scripts/player_character.gd
+res://Levels/main_menu.tscn
+res://Levels/battle.tscn
+res://Levels/game_level.tscn
+res://Objects/character_select_menu.tscn
+res://Characters/follower.tscn
+res://Scripts/Interaction.gd

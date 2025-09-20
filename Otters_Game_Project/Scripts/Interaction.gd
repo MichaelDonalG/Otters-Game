@@ -9,7 +9,7 @@ class_name Interaction extends Area2D
 
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("interact"):
 		if interactable:
 			if(interact_type == "chest"):
@@ -19,10 +19,10 @@ func _physics_process(delta):
 
 
 
-func _on_area_entered(area):
+func _on_area_entered():
 	interactable = 1
 
 
 
-func _on_area_exited(area):
+func _on_area_exited():
 	interactable = 0
