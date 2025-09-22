@@ -1,12 +1,13 @@
-ProgressBar
+AnimationPlayer
+Sprite2D
 Label
-TextureRect
+ProgressBar
 VBoxContainer
+TextureRect
+HBoxContainer
 ColorRect
 Control
 Container
-HBoxContainer
-AnimationPlayer
 Button
 TextureButton
 PanelContainer

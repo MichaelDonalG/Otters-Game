@@ -33,6 +33,7 @@ func _ready():
 		State.playerx = null
 		State.playery = null
 		State.enemy2 = null
+	State.set_stats()
 	set_health()
 
 
@@ -161,6 +162,7 @@ func remove_point_from_path(index: int):
 
 
 func _on_character_select_menu_gui_input(event: InputEvent) -> void:
+	State.set_stats()
 	set_health()
 	match State.pos1Char:
 		"Peepo":

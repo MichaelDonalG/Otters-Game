@@ -14,6 +14,7 @@ var enemy2_status = "alive"
 var current_player_health = 0
 var P1_is_defending = false
 var P2_is_defending = false
+var P3_is_defending = false
 var playerTurn = 1
 var partySize = 1
 
@@ -24,16 +25,24 @@ func _ready():
 	
 	####SET PLAYER START####
 	$player.texture = load("res://Art/Battle Icons/"+ State.pos1Char +".png")
+	set_health($PlayerPanel/VBoxContainer/PlayerData/HealthContainer/ProgressBar, State.P1_current_health, State.Max_Health) 
+	$PlayerPanel/VBoxContainer/PlayerData/HealthContainer/Label.text = str($PlayerPanel/VBoxContainer/PlayerData/HealthContainer/ProgressBar.value)
 	if State.pos2Char != "empty":
 		$player2.show()
+		$PlayerPanel/VBoxContainer/Player2Data.show()
 		$player2.texture = load("res://Art/Battle Icons/"+State.pos2Char+".png")
 		partySize = 2
 		$player2.position = Vector2(228,121)
-	if State.pos3Char != "empty":
-		pass
+		set_health($PlayerPanel/VBoxContainer/Player2Data/HealthContainer/ProgressBar,State.P2_current_health, State.Max_Health)
+		$PlayerPanel/VBoxContainer/Player2Data/HealthContainer/Label.text = str($PlayerPanel/VBoxContainer/Player2Data/HealthContainer/ProgressBar.value)
+		if State.pos3Char != "empty":
+			$player3.show()
+			$PlayerPanel/VBoxContainer/Player3Data.show()
+			$player3.texture = load("res://Art/Battle Icons/"+State.pos3Char+".png")
+			partySize = 3
+			set_health($PlayerPanel/VBoxContainer/Player3Data/HealthContainer/ProgressBar, State.P3_current_health, State.Max_Health)
+			$PlayerPanel/VBoxContainer/Player3Data/HealthContainer/Label.text = str($PlayerPanel/VBoxContainer/Player3Data/HealthContainer/ProgressBar.value)
 	
-	set_health($PlayerPanel/VBoxContainer/PlayerData/HealthContainer/ProgressBar, State.P1_current_health, State.Max_Health) 
-	$PlayerPanel/VBoxContainer/PlayerData/HealthContainer/Label.text = str($PlayerPanel/VBoxContainer/PlayerData/HealthContainer/ProgressBar.value)
 	
 	current_player_health = State.P1_current_health
 	
@@ -133,7 +142,7 @@ func player_turn():
 		2:
 			$player2/AnimationPlayer.play("turn_start")
 		3:
-			pass
+			$player3/AnimationPlayer.play("turn_start")
 
 func _on_run_pressed():
 	display_text("Got away safely")
@@ -154,6 +163,8 @@ func _on_defend_pressed():
 			P1_is_defending = true
 		2:
 			P2_is_defending = true
+		3:
+			P3_is_defending = true
 	
 	display_text("You defend")
 	paused = 1
@@ -174,6 +185,9 @@ func _on_attack_enemy_1_pressed():
 			enemy1_health = max(0, enemy1_health - State.P1_damage)
 		2:
 			enemy1_health = max(0, enemy1_health - State.P2_damage)
+		3:
+			enemy2_health = max(0, enemy2_health - State.P3_damage)
+	set_health($EnemyContainer2/VBoxContainer/ProgressBar, enemy2_health, enemy2.health)
 	set_health($EnemyContainer/VBoxContainer/ProgressBar, enemy1_health, enemy1.health)
 	
 	$AnimationPlayer.play("enemy1_damaged")
@@ -202,6 +216,8 @@ func _on_attack_enemy_2_pressed():
 			enemy2_health = max(0, enemy2_health - State.P1_damage)
 		2:
 			enemy2_health = max(0, enemy2_health - State.P2_damage)
+		3:
+			enemy2_health = max(0, enemy2_health - State.P3_damage)
 	set_health($EnemyContainer2/VBoxContainer/ProgressBar, enemy2_health, enemy2.health)
 	
 	$AnimationPlayer.play("enemy2_damaged")
@@ -222,6 +238,8 @@ func check_if_victory():
 			$player/AnimationPlayer.play("turn_end")
 		2:
 			$player2/AnimationPlayer.play("turn_end")
+		3:
+			$player3/AnimationPlayer.play("turn_end")
 	if enemy1_status == "dead" && enemy2_status == "dead":
 		State.P1_current_health = current_player_health
 		State.remove_enemy()
