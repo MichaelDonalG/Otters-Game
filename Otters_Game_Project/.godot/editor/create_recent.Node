@@ -1,11 +1,13 @@
-AnimationPlayer
+ProgressBar
 Label
-Container
-Button
 TextureRect
 VBoxContainer
-TextureButton
 ColorRect
+Control
+Container
 HBoxContainer
+AnimationPlayer
+Button
+TextureButton
 PanelContainer
 AnimationTree

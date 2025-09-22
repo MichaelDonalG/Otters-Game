@@ -1,8 +1,11 @@
-res://Characters/player_character.tscn
-res://Scripts/player_character.gd
 res://Levels/main_menu.tscn
 res://Levels/battle.tscn
 res://Levels/game_level.tscn
+res://Characters/player_character.tscn
 res://Objects/character_select_menu.tscn
-res://Characters/follower.tscn
+res://Characters/cow.tscn
+res://Scripts/battle.gd
+res://Scripts/player_character.gd
 res://Scripts/Interaction.gd
+res://Scripts/enemy.gd
+res://Scripts/state.gd

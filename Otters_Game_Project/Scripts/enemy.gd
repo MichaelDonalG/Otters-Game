@@ -61,7 +61,7 @@ func _on_timer_timeout():
 	pick_new_state()
 
 
-func _on_interactable_area_entered(area):
+func _on_interactable_area_entered(_area):
 	State.enemy_type2 = "null"
 	
 	State.save_position(position.x, position.y)

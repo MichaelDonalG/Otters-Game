@@ -19,10 +19,10 @@ func _physics_process(_delta):
 
 
 
-func _on_area_entered():
+func _on_area_entered(_area):
 	interactable = 1
 
 
 
-func _on_area_exited():
+func _on_area_exited(_area):
 	interactable = 0

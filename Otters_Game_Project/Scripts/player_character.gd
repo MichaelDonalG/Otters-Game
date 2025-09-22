@@ -160,7 +160,7 @@ func remove_point_from_path(index: int):
 	$"../Path2D".curve.remove_point(index)
 
 
-func _on_character_select_menu_gui_input() -> void:
+func _on_character_select_menu_gui_input(event: InputEvent) -> void:
 	set_health()
 	match State.pos1Char:
 		"Peepo":

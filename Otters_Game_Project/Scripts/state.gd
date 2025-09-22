@@ -4,8 +4,10 @@ var pos1Char : String = "Peepo"
 var pos2Char : String = "empty"
 var pos3Char : String = "empty"
 
-var P1_current_health = 50
-var P1_max_health = 50
+var Max_Health = 10000
+
+var P1_current_health = 180
+var P1_max_health = 180
 var P1_damage = 20
 
 var P2_current_health = 50
