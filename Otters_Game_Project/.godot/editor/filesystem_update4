@@ -1,2 +1,2 @@
-res://Levels/game_level.tscn
-res://Scripts/player_character.gd
+res://Levels/battle.tscn
+res://Scripts/battle.gd

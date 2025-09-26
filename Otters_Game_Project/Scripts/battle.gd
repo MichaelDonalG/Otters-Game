@@ -267,7 +267,7 @@ func _on_attack_enemy_1_mouse_entered() -> void:
 
 func _on_attack_enemy_1_mouse_exited() -> void:
 	if $EnemyContainer/AttackEnemy1.disabled == false:
-		$EnemyContainer.modulate =  Color(1,1,1,1)
+		$EnemyContainer/AttackEnemy1.modulate =  Color(1,1,1,1)
 		$EnemyContainer/AttackEnemy1/AnimationPlayer.pause()
 
 func _on_attack_enemy_2_mouse_entered() -> void:
@@ -277,5 +277,5 @@ func _on_attack_enemy_2_mouse_entered() -> void:
 
 func _on_attack_enemy_2_mouse_exited() -> void:
 	if $EnemyContainer2/AttackEnemy2.disabled == false:
-		$EnemyContainer2.modulate = Color(1,1,1,1)
+		$EnemyContainer2/AttackEnemy2.modulate = Color(1,1,1,1)
 		$EnemyContainer2/AttackEnemy2/AnimationPlayer.pause()

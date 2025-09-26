@@ -1,6 +1,6 @@
 [gd_scene load_steps=54 format=3 uid="uid://colt26f7oy7l5"]
 
-[ext_resource type="Script" path="res://Scripts/battle.gd" id="1_rxw0g"]
+[ext_resource type="Script" uid="uid://bywdsomrkwwva" path="res://Scripts/battle.gd" id="1_rxw0g"]
 [ext_resource type="Texture2D" uid="uid://dbx1i8njmovsx" path="res://Art/BattleAnim.png" id="2_huckk"]
 [ext_resource type="Texture2D" uid="uid://dp6qdg6rv0d1o" path="res://Art/Battle Maps/Grasslands.png" id="3_8gmbr"]
 [ext_resource type="Texture2D" uid="uid://bkddtg3n1vkq0" path="res://Art/Battle Icons/otters_test.png" id="3_sr5sf"]
@@ -112,11 +112,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a6jqu"]
 _data = {
-"RESET": SubResource("Animation_piw0h"),
-"battle_idle": SubResource("Animation_2cf3p"),
-"player_damaged": SubResource("Animation_ifa8b"),
-"turn_end": SubResource("Animation_mb1w0"),
-"turn_start": SubResource("Animation_mb7f7")
+&"RESET": SubResource("Animation_piw0h"),
+&"battle_idle": SubResource("Animation_2cf3p"),
+&"player_damaged": SubResource("Animation_ifa8b"),
+&"turn_end": SubResource("Animation_mb1w0"),
+&"turn_start": SubResource("Animation_mb7f7")
 }
 
 [sub_resource type="Animation" id="Animation_0nhpk"]
@@ -168,9 +168,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3scq"]
 _data = {
-"RESET": SubResource("Animation_0nhpk"),
-"turn_end": SubResource("Animation_m1e1r"),
-"turn_start": SubResource("Animation_6a448")
+&"RESET": SubResource("Animation_0nhpk"),
+&"turn_end": SubResource("Animation_m1e1r"),
+&"turn_start": SubResource("Animation_6a448")
 }
 
 [sub_resource type="Animation" id="Animation_gf6gc"]
@@ -222,9 +222,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_edid2"]
 _data = {
-"RESET": SubResource("Animation_gf6gc"),
-"turn_end": SubResource("Animation_lbf6h"),
-"turn_start": SubResource("Animation_ouhv5")
+&"RESET": SubResource("Animation_gf6gc"),
+&"turn_end": SubResource("Animation_lbf6h"),
+&"turn_start": SubResource("Animation_ouhv5")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sqlk"]
@@ -270,20 +270,20 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1mne"]
 bg_color = Color(0, 0.662745, 0.831373, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu565"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqy35"]
-bg_color = Color(1, 1, 1, 1)
-border_color = Color(0.8, 0.8, 0.8, 0)
-border_blend = true
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sekds"]
 bg_color = Color(0, 0, 0, 0.533333)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqy35"]
+bg_color = Color(1, 1, 1, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hu565"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_golk4"]
 bg_color = Color(0, 0, 0, 1)
@@ -359,11 +359,11 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xvjx1"]
 _data = {
-"RESET": SubResource("Animation_wvdgh"),
-"enemy1_damaged": SubResource("Animation_24416"),
-"enemy1_died": SubResource("Animation_5m46f"),
-"enemy2_damaged": SubResource("Animation_q4dwp"),
-"enemy2_died": SubResource("Animation_obfos")
+&"RESET": SubResource("Animation_wvdgh"),
+&"enemy1_damaged": SubResource("Animation_24416"),
+&"enemy1_died": SubResource("Animation_5m46f"),
+&"enemy2_damaged": SubResource("Animation_q4dwp"),
+&"enemy2_died": SubResource("Animation_obfos")
 }
 
 [sub_resource type="Animation" id="Animation_iadqt"]
@@ -371,26 +371,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(-73, 12)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
+tracks/1/path = NodePath("AttackEnemy1:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-73, 12)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ictoa"]
@@ -400,11 +400,11 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate")
+tracks/0/path = NodePath("AttackEnemy1:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
+"times": PackedFloat32Array(0, 0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -444,10 +444,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_giiw3"]
 _data = {
-"RESET": SubResource("Animation_iadqt"),
-"hover": SubResource("Animation_ictoa"),
-"turn_end": SubResource("Animation_qf27p"),
-"turn_start": SubResource("Animation_0khdi")
+&"RESET": SubResource("Animation_iadqt"),
+&"hover": SubResource("Animation_ictoa"),
+&"turn_end": SubResource("Animation_qf27p"),
+&"turn_start": SubResource("Animation_0khdi")
 }
 
 [sub_resource type="Animation" id="Animation_4x88r"]
@@ -467,26 +467,26 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("..:modulate")
+tracks/1/path = NodePath("..:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Vector2(-73, 61)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("..:position")
+tracks/2/path = NodePath(".:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(-73, 61)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_qnaee"]
@@ -496,11 +496,11 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:modulate")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5),
+"times": PackedFloat32Array(0, 0.2, 0.5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -540,10 +540,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d0gn8"]
 _data = {
-"RESET": SubResource("Animation_4x88r"),
-"hover": SubResource("Animation_qnaee"),
-"turn_end": SubResource("Animation_tih10"),
-"turn_start": SubResource("Animation_nkmyx")
+&"RESET": SubResource("Animation_4x88r"),
+&"hover": SubResource("Animation_qnaee"),
+&"turn_end": SubResource("Animation_tih10"),
+&"turn_start": SubResource("Animation_nkmyx")
 }
 
 [node name="Battle" type="Control"]
@@ -563,7 +563,7 @@ texture = ExtResource("2_huckk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player"]
 libraries = {
-"": SubResource("AnimationLibrary_a6jqu")
+&"": SubResource("AnimationLibrary_a6jqu")
 }
 
 [node name="player2" type="Sprite2D" parent="."]
@@ -574,7 +574,7 @@ texture = ExtResource("2_huckk")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player2"]
 libraries = {
-"": SubResource("AnimationLibrary_u3scq")
+&"": SubResource("AnimationLibrary_u3scq")
 }
 
 [node name="player3" type="Sprite2D" parent="."]
@@ -585,7 +585,7 @@ texture = ExtResource("3_sr5sf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="player3"]
 libraries = {
-"": SubResource("AnimationLibrary_edid2")
+&"": SubResource("AnimationLibrary_edid2")
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -612,9 +612,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_8sqlk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PlayerPanel"]
 layout_mode = 0
-offset_left = -468.0
-offset_right = 945.0
-offset_bottom = 48.0
+offset_left = -105.00003
+offset_top = 6.2499995
+offset_right = 1308.0
+offset_bottom = 140.25
+scale = Vector2(0.5, 0.5)
 
 [node name="PlayerData" type="HBoxContainer" parent="PlayerPanel/VBoxContainer"]
 layout_mode = 2
@@ -626,7 +628,6 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="PlayerPanel/VBoxContainer/PlayerData/HealthContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("9_ajxlr")
 text = "100
 "
@@ -635,9 +636,11 @@ horizontal_alignment = 2
 [node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/VBoxContainer/PlayerData/HealthContainer"]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_0tx88")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qo0c8")
 max_value = 10000.0
+step = 1.0
 value = 50.0
 fill_mode = 1
 show_percentage = false
@@ -668,7 +671,7 @@ step = 1.0
 show_percentage = false
 
 [node name="Player2Data" type="HBoxContainer" parent="PlayerPanel/VBoxContainer"]
-visible = false
+custom_minimum_size = Vector2(0, 42)
 layout_mode = 2
 alignment = 1
 
@@ -678,7 +681,6 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="PlayerPanel/VBoxContainer/Player2Data/HealthContainer"]
 layout_mode = 2
-size_flags_horizontal = 3
 theme_override_fonts/font = ExtResource("9_ajxlr")
 text = "100"
 horizontal_alignment = 2
@@ -720,7 +722,6 @@ step = 1.0
 show_percentage = false
 
 [node name="Player3Data" type="HBoxContainer" parent="PlayerPanel/VBoxContainer"]
-visible = false
 layout_mode = 2
 alignment = 1
 
@@ -743,7 +744,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_lpvti")
 theme_override_styles/fill = SubResource("StyleBoxFlat_hxp4q")
 max_value = 10000.0
 step = 1.0
-value = 100.0
+value = 50.0
 fill_mode = 1
 show_percentage = false
 
@@ -765,6 +766,7 @@ text = "0
 [node name="ProgressBar" type="ProgressBar" parent="PlayerPanel/VBoxContainer/Player3Data/ArmorContainer"]
 custom_minimum_size = Vector2(0, 5)
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_v7ure")
 theme_override_styles/fill = SubResource("StyleBoxFlat_f1mne")
 max_value = 10000.0
@@ -793,35 +795,35 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_styles/hover = SubResource("StyleBoxFlat_hu565")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yqy35")
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_sekds")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yqy35")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hu565")
 text = "Attack"
 
 [node name="Defend" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/hover = SubResource("StyleBoxFlat_hu565")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yqy35")
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_sekds")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yqy35")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hu565")
 text = "Defend"
 
 [node name="Run" type="Button" parent="ActionsPanel/Actions"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_default_cursor_shape = 2
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/hover = SubResource("StyleBoxFlat_hu565")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yqy35")
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_sekds")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yqy35")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hu565")
 text = "Run"
 
 [node name="TextBox" type="Panel" parent="."]
@@ -857,7 +859,7 @@ text = ">"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xvjx1")
+&"": SubResource("AnimationLibrary_xvjx1")
 }
 
 [node name="EnemyContainer" type="VBoxContainer" parent="."]
@@ -891,7 +893,7 @@ stretch_mode = 0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnemyContainer/AttackEnemy1"]
 root_node = NodePath("../..")
 libraries = {
-"": SubResource("AnimationLibrary_giiw3")
+&"": SubResource("AnimationLibrary_giiw3")
 }
 
 [node name="EnemyContainer2" type="VBoxContainer" parent="."]
@@ -924,7 +926,7 @@ stretch_mode = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="EnemyContainer2/AttackEnemy2"]
 libraries = {
-"": SubResource("AnimationLibrary_d0gn8")
+&"": SubResource("AnimationLibrary_d0gn8")
 }
 
 [connection signal="pressed" from="ActionsPanel/Actions/Attack" to="." method="_on_attack_pressed"]
