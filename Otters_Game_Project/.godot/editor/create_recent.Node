@@ -1,5 +1,7 @@
-AnimationPlayer
 Sprite2D
+TileMapLayer
+TileMap
+AnimationPlayer
 Label
 ProgressBar
 VBoxContainer
@@ -10,5 +12,3 @@ Control
 Container
 Button
 TextureButton
-PanelContainer
-AnimationTree

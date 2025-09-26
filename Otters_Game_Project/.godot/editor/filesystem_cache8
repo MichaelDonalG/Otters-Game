@@ -1,15 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1758513204
+::res://::1758862020
 alagard.ttf::FontFile::4412493803897756500::1757489578::1757489612::1::::<><>::
 export_presets.cfg::TextFile::-1::1758349438::0::1::::<><>::
 icon.svg::CompressedTexture2D::3438020190328360222::1731096867::1756671785::1::::<><>::
-::res://Art/::1758504768
+::res://Art/::1758860799
 BattleAnim.png::CompressedTexture2D::7278526265002419807::1757487427::1757487446::1::::<><>::
 Battle_BG.PNG::CompressedTexture2D::1883057306326625354::1731096867::1756671785::1::::<><>::
 otters_overworld_test_1.png::CompressedTexture2D::854271203820372920::1757485727::1757485767::1::::<><>::
 otters_test.png::CompressedTexture2D::475222242758142156::1757485721::1757485767::1::::<><>::
 ::res://Art/Ana/::1757551257
-Ana.png::CompressedTexture2D::2901101369204147354::1757487304::1757487394::1::::<><>::
+Ana.png::CompressedTexture2D::2901101369204147354::1758863434::1758863440::1::::<><>::
 ::res://Art/Battle Icons/::1757896372
 Ana.png::CompressedTexture2D::390688497513111055::1757896350::1757896372::1::::<><>::
 Cyrus.png::CompressedTexture2D::1316512476621761980::1757896367::1757896372::1::::<><>::
@@ -67,28 +67,31 @@ Tall Grass hill tiles v.2.png::CompressedTexture2D::2249019191266819406::1731096
 Grass.png::CompressedTexture2D::2254195799937121476::1731096869::1756671785::1::::<><>::
 Hills.png::CompressedTexture2D::3829732633998526503::1731096869::1756671785::1::::<><>::
 Tilled Dirt.png::CompressedTexture2D::1930467848021763539::1731096869::1756671785::1::::<><>::
-::res://Art/Starlorn/::1757551258
-Starlorn.png::CompressedTexture2D::8698274164059677333::1757485941::1757485973::1::::<><>::
-::res://Characters/::1758509064
+::res://Art/Starlorn/::1758863262
+Starlorn.png::CompressedTexture2D::3406458576266281300::1758863089::1758863262::1::::<><>::
+::res://Art/Tiles/::1758860881
+Blue_Cobblestone.png::CompressedTexture2D::2610637765195229322::1758860768::1758860881::1::::<><>::
+::res://Characters/::1758863363
 Cow2.tres::Resource::2483996507904880853::1736374964::0::1::::<><>::res://Scripts/BaseEnemy.gd<>uid://2bspidc70mdd::::res://Art/Sprout Lands - Sprites - Basic pack/Characters/Cow Sprite 2.png
 cow.gd::GDScript::-1::1731096869::0::1::::<>CharacterBody2D<>::
 Cow.tres::Resource::831012637333729368::1757895618::0::1::::<><>::res://Scripts/BaseEnemy.gd<>uid://dwl1r0b61xiav::::res://Art/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Enemy Sprites.png
-cow.tscn::PackedScene::8698739704751958493::1758509035::0::1::::<><>::res://Scripts/enemy.gd<>uid://bg131h6lvspda::::res://Art/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png<>res://Scripts/Interaction.gd
+cow.tscn::PackedScene::8698739704751958493::1758863363::0::1::::<><>::res://Scripts/enemy.gd<>uid://bg131h6lvspda::::res://Art/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png<>res://Scripts/Interaction.gd
 enemy.tscn::PackedScene::1589375661854104896::1731096870::0::1::::<><>::uid://bg131h6lvspda::::res://Art/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Sprites.png<>res://Scripts/Interaction.gd
 follower.gd::GDScript::-1::1757490475::0::1::::<>CharacterBody2D<>::
 follower.tscn::PackedScene::7464512684828231636::1758350055::0::1::::<><>::res://Characters/follower.gd<>uid://bgw3o1tvyy46b::::res://Art/Cyrus/Quark.png
 player_character.gd::GDScript::-1::1731096870::0::1::::<>CharacterBody2D<>::
-player_character.tscn::PackedScene::6538610523477071239::1758509064::0::1::::<><>::res://Scripts/player_character.gd<>uid://c7q44v18ouelr::::res://Art/Cyrus/Cyrus.png<>uid://b34pemj15bf37::::res://alagard.ttf<>uid://b57keuogftxdc::::res://Art/Dialogue Icons/Starlorn.png<>uid://suqchad43hub::::res://Objects/character_select_menu.tscn
-::res://Levels/::1758509034
-battle.tscn::PackedScene::5779396810332807540::1758509034::0::1::::<><>::res://Scripts/battle.gd<>uid://dbx1i8njmovsx::::res://Art/BattleAnim.png<>uid://dp6qdg6rv0d1o::::res://Art/Battle Maps/Grasslands.png<>uid://c6afwihqabi0q::::res://Art/Health Icons/Starlorn.png<>uid://b34pemj15bf37::::res://alagard.ttf
+player_character.tscn::PackedScene::6538610523477071239::1758863363::0::1::::<><>::res://Scripts/player_character.gd<>uid://c7q44v18ouelr::::res://Art/Cyrus/Cyrus.png<>uid://b34pemj15bf37::::res://alagard.ttf<>uid://b57keuogftxdc::::res://Art/Dialogue Icons/Starlorn.png<>uid://suqchad43hub::::res://Objects/character_select_menu.tscn
+::res://Levels/::1758863363
+battle.tscn::PackedScene::5779396810332807540::1758863362::0::1::::<><>::res://Scripts/battle.gd<>uid://dbx1i8njmovsx::::res://Art/BattleAnim.png<>uid://dp6qdg6rv0d1o::::res://Art/Battle Maps/Grasslands.png<>uid://bkddtg3n1vkq0::::res://Art/Battle Icons/otters_test.png<>uid://c6afwihqabi0q::::res://Art/Health Icons/Starlorn.png<>uid://b34pemj15bf37::::res://alagard.ttf
 game_level2.tscn::PackedScene::3425901395763429475::1758348273::0::1::::<><>::uid://c0fl7v1ttlh88::::res://Characters/player_character.tscn<>uid://cn65wqk5quc8x::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Grass hill tiles v.2.png<>uid://clgir762vjfdg::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png<>uid://domx8p7w5g53v::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png<>uid://7bpauhulexr7::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Tall Grass hill tiles v.2.png<>uid://butfewkytpk7x::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/old tiles/Hills.png<>uid://cy3f3kbf7rqye::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png<>uid://bx8o4pgktgr3e::::res://Objects/chest.tscn<>uid://n73arlyrpf4l::::res://Objects/Door.tscn<>uid://liod7gncsdfg::::res://Objects/Furniture_Sprite.tscn<>uid://ymaooe54cls2::::res://Objects/bed.tscn<>uid://bbb3wqt8dbsqh::::res://Objects/Table.tscn<>uid://del4oy7ack5g7::::res://Characters/follower.tscn
-game_level.tscn::PackedScene::3511757036707641696::1758509034::0::1::::<><>::uid://c0fl7v1ttlh88::::res://Characters/player_character.tscn<>uid://del4oy7ack5g7::::res://Characters/follower.tscn<>uid://cn65wqk5quc8x::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Grass hill tiles v.2.png<>uid://clgir762vjfdg::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png<>uid://domx8p7w5g53v::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png<>uid://7bpauhulexr7::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Tall Grass hill tiles v.2.png<>uid://butfewkytpk7x::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/old tiles/Hills.png<>uid://cy3f3kbf7rqye::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png<>uid://dv6y8bw5athsf::::res://Characters/cow.tscn<>uid://bx8o4pgktgr3e::::res://Objects/chest.tscn<>uid://n73arlyrpf4l::::res://Objects/Door.tscn
-main_menu.tscn::PackedScene::6720774949501035844::1758509034::0::1::::<><>::res://Scripts/main_menu.gd
-::res://Objects/::1758509035
+game_level.tscn::PackedScene::3511757036707641696::1758863363::0::1::::<><>::uid://c0fl7v1ttlh88::::res://Characters/player_character.tscn<>uid://del4oy7ack5g7::::res://Characters/follower.tscn<>uid://cn65wqk5quc8x::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Grass hill tiles v.2.png<>uid://clgir762vjfdg::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Fences.png<>uid://domx8p7w5g53v::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Water.png<>uid://7bpauhulexr7::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/new tiles/Tall Grass hill tiles v.2.png<>uid://butfewkytpk7x::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/ground tiles/old tiles/Hills.png<>uid://cy3f3kbf7rqye::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png<>uid://dv6y8bw5athsf::::res://Characters/cow.tscn<>uid://bx8o4pgktgr3e::::res://Objects/chest.tscn<>uid://n73arlyrpf4l::::res://Objects/Door.tscn
+main_menu.tscn::PackedScene::6720774949501035844::1758863362::0::1::::<><>::res://Scripts/main_menu.gd
+tiles.tscn::PackedScene::2667353486324729388::1758861710::0::1::::<><>::
+::res://Objects/::1758863363
 alagard.ttf::FontFile::6470042188844509313::1757489580::1757489581::1::::<><>::
 bed.tscn::PackedScene::1709330524384191179::1731096875::0::1::::<><>::res://Scripts/Interaction.gd<>uid://8yrqgpsqb213::::res://Objects/furniture.tscn
 beds.tscn::PackedScene::2366838006883469060::1731096876::0::1::::<><>::uid://cnw1cuadprrgq::::res://Art/Sprout Lands - Sprites - Basic pack/Objects/Basic Furniture.png
-character_select_menu.tscn::PackedScene::1305662151877471957::1758509035::0::1::::<><>::res://Scripts/player_select_menu.gd<>uid://ctavw7e8qa76e::::res://Art/Menu Icons/Peepo.png<>uid://d36cu41vkw851::::res://Art/Menu Icons/PlayerPosition1.png<>uid://c6ddss5yck6wb::::res://Art/Menu Icons/Starlorn.png<>uid://cs8fyixqtdxgx::::res://Art/Menu Icons/Ana.png<>uid://bwmfsn4jfwls8::::res://Art/Menu Icons/Cyrus.png<>uid://b34pemj15bf37::::res://alagard.ttf
+character_select_menu.tscn::PackedScene::1305662151877471957::1758863363::0::1::::<><>::res://Scripts/player_select_menu.gd<>uid://ctavw7e8qa76e::::res://Art/Menu Icons/Peepo.png<>uid://d36cu41vkw851::::res://Art/Menu Icons/PlayerPosition1.png<>uid://c6ddss5yck6wb::::res://Art/Menu Icons/Starlorn.png<>uid://cs8fyixqtdxgx::::res://Art/Menu Icons/Ana.png<>uid://bwmfsn4jfwls8::::res://Art/Menu Icons/Cyrus.png<>uid://b34pemj15bf37::::res://alagard.ttf
 chest.tscn::PackedScene::4069791176772870688::1758269716::0::1::::<><>::uid://bxmcj0imger5e::::res://Art/Sprout Lands - Sprites - Basic pack/Objects/Chest.png<>res://Scripts/Interaction.gd
 Door.tscn::PackedScene::980216042225360065::1731096875::0::1::::<><>::res://Scripts/Interaction.gd<>uid://cy3f3kbf7rqye::::res://Art/Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png
 furniture.tscn::PackedScene::2366838006883469060::1731096876::0::1::::<><>::uid://cnw1cuadprrgq::::res://Art/Sprout Lands - Sprites - Basic pack/Objects/Basic Furniture.png
@@ -96,14 +99,14 @@ Furniture_Sprite.tscn::PackedScene::789449387941355020::1731096875::0::1::::<><>
 Interaction.gd::GDScript::-1::1731096875::0::1::::Interactable<>Area2D<>::
 Table.tscn::PackedScene::2460414139576886791::1731096875::0::1::::<><>::uid://cnw1cuadprrgq::::res://Art/Sprout Lands - Sprites - Basic pack/Objects/Basic Furniture.png
 text_box.gd::GDScript::-1::1758268872::0::1::::<>Panel<>::
-::res://Scripts/::1758509050
+::res://Scripts/::1758863312
 BaseEnemy.gd::GDScript::-1::1731096876::0::1::::<>Resource<>::
-battle.gd::GDScript::-1::1758508770::0::1::::<>Control<>::
+battle.gd::GDScript::-1::1758863312::0::1::::<>Control<>::
 chest.gd::GDScript::-1::1731096876::0::1::::<>Interactable<>::
 cow.gd::GDScript::-1::1731096876::0::1::::<>CharacterBody2D<>::
 enemy.gd::GDScript::-1::1758494787::0::1::::<>CharacterBody2D<>::
 Interaction.gd::GDScript::-1::1758494664::0::1::::Interaction<>Area2D<>::
 main_menu.gd::GDScript::-1::1731096876::0::1::::<>Control<>::
-player_character.gd::GDScript::-1::1758509050::0::1::::<>CharacterBody2D<>::
+player_character.gd::GDScript::-1::1758514410::0::1::::<>CharacterBody2D<>::
 player_select_menu.gd::GDScript::-1::1757896730::0::1::::<>Control<>::
-state.gd::GDScript::-1::1758508650::0::1::::<>Node<>::
+state.gd::GDScript::-1::1758515175::0::1::::<>Node<>::

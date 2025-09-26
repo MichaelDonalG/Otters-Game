@@ -187,8 +187,9 @@ func _on_attack_enemy_1_pressed():
 			enemy1_health = max(0, enemy1_health - State.P2_damage)
 		3:
 			enemy2_health = max(0, enemy2_health - State.P3_damage)
-	set_health($EnemyContainer2/VBoxContainer/ProgressBar, enemy2_health, enemy2.health)
 	set_health($EnemyContainer/VBoxContainer/ProgressBar, enemy1_health, enemy1.health)
+	if enemy2 != null:
+		set_health($EnemyContainer2/VBoxContainer/ProgressBar, enemy2_health, enemy2.health)
 	
 	$AnimationPlayer.play("enemy1_damaged")
 	await($AnimationPlayer.animation_finished)

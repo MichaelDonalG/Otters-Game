@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bosd40tn5igb1"
-path="res://.godot/imported/Starlorn.png-be90cf962eeb04e4eb2dcfb3800f7674.ctex"
+uid="uid://bdgu275pabc2e"
+path="res://.godot/imported/Blue_Cobblestone.png-836cc00f2ccce0a39ec8dfc082c3d5ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Starlorn/Starlorn.png"
-dest_files=["res://.godot/imported/Starlorn.png-be90cf962eeb04e4eb2dcfb3800f7674.ctex"]
+source_file="res://Art/Tiles/Blue_Cobblestone.png"
+dest_files=["res://.godot/imported/Blue_Cobblestone.png-836cc00f2ccce0a39ec8dfc082c3d5ce.ctex"]
 
 [params]
 
