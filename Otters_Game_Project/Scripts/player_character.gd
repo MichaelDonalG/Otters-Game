@@ -71,8 +71,7 @@ func _physics_process(_delta):
 		$"../Path2D/PathFollow2D".progress_ratio = .5
 	if $"../Path2D".curve.get_point_count() >= 10:
 		remove_point_from_path(0)
-	
-	
+
 
 func update_animation_paramaeters(move_input: Vector2):
 	if(move_input != Vector2.ZERO):
