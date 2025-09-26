@@ -65,9 +65,10 @@ func _physics_process(_delta):
 	
 	####################Follower Code###################
 	add_point_to_path(Vector2(position.x, position.y))
-	if $"../Path2D/PathFollow2D".progress_ratio <= .5:
+	if $"../Path2D/PathFollow2D".progress_ratio <= .5 and $"../Path2D/PathFollow2D".progress > 1:
 		$"../Path2D/PathFollow2D".progress_ratio  += .1 * _delta
-	else:
+		print($"../Path2D/PathFollow2D".progress)
+	elif $"../Path2D/PathFollow2D".progress > 1:
 		$"../Path2D/PathFollow2D".progress_ratio = .5
 	if $"../Path2D".curve.get_point_count() >= 10:
 		remove_point_from_path(0)
@@ -154,13 +155,14 @@ func set_health():
 
 ################Follower Functions######################
 func add_point_to_path(new_point: Vector2):
-	$"../Path2D".curve.add_point(new_point)
+	if new_point != $"../Path2D".curve.get_closest_point(new_point):
+		$"../Path2D".curve.add_point(new_point)
 
 func remove_point_from_path(index: int):
 	$"../Path2D".curve.remove_point(index)
 
 
-func _on_character_select_menu_gui_input(event: InputEvent) -> void:
+func _on_character_select_menu_gui_input(_event: InputEvent) -> void:
 	State.set_stats()
 	set_health()
 	match State.pos1Char:
