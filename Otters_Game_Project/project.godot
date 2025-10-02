@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 State="*res://Scripts/state.gd"
 EventHandler="*res://Scripts/event_handler.gd"
+BattleState="*res://Scripts/battle_state.gd"
 
 [display]
 

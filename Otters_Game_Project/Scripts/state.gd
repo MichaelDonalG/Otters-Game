@@ -37,9 +37,8 @@ var Cyrus_damage = 30
 var enemy_type1 = null
 var enemy_type2 = null
 
-
-var enemy1:Resource
-var enemy2:Resource
+var enemy1:Resource = null
+var enemy2:Resource = null
 
 var defeated_enemy
 var defeated_enemies = []
@@ -54,6 +53,13 @@ func save_position(x, y):
 
 func remove_enemy():
 	defeated_enemies.insert(0, defeated_enemy)
+
+func reset():
+	enemy_type1 = null
+	enemy_type2 = null
+	
+	enemy1 = null
+	enemy2 = null
 
 func load_enemy():
 	enemy1 = load("res://Characters/"+enemy_type1+".tres")
