@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://c0fl7v1ttlh88"]
+[gd_scene load_steps=25 format=3 uid="uid://c0fl7v1ttlh88"]
 
-[ext_resource type="Script" path="res://Scripts/player_character.gd" id="1_12e7s"]
-[ext_resource type="Texture2D" uid="uid://c7q44v18ouelr" path="res://Art/Cyrus/Cyrus.png" id="2_n27h1"]
+[ext_resource type="Script" uid="uid://dxg2ne4cqlgqj" path="res://Scripts/player_character.gd" id="1_12e7s"]
+[ext_resource type="Texture2D" uid="uid://bhlkyllwoue5o" path="res://Art/Ana/Ana.png" id="2_iung0"]
 [ext_resource type="FontFile" uid="uid://b34pemj15bf37" path="res://alagard.ttf" id="3_3h7eb"]
 [ext_resource type="Texture2D" uid="uid://b57keuogftxdc" path="res://Art/Dialogue Icons/Starlorn.png" id="4_jmgrc"]
 [ext_resource type="PackedScene" uid="uid://suqchad43hub" path="res://Objects/character_select_menu.tscn" id="5_ob4og"]
+[ext_resource type="PackedScene" uid="uid://del4oy7ack5g7" path="res://Characters/follower.tscn" id="6_7htjj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bs5tp"]
 size = Vector2(6, 9.5)
@@ -162,15 +163,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_swch4"]
 _data = {
-"RESET": SubResource("Animation_winau"),
-"idle_down": SubResource("Animation_cwc4q"),
-"idle_left": SubResource("Animation_7m1u6"),
-"idle_right": SubResource("Animation_n5saj"),
-"idle_up": SubResource("Animation_5wpwj"),
-"walk_down": SubResource("Animation_u7qql"),
-"walk_left": SubResource("Animation_6ox0q"),
-"walk_right": SubResource("Animation_yvhr1"),
-"walk_up": SubResource("Animation_7m4wn")
+&"RESET": SubResource("Animation_winau"),
+&"idle_down": SubResource("Animation_cwc4q"),
+&"idle_left": SubResource("Animation_7m1u6"),
+&"idle_right": SubResource("Animation_n5saj"),
+&"idle_up": SubResource("Animation_5wpwj"),
+&"walk_down": SubResource("Animation_u7qql"),
+&"walk_left": SubResource("Animation_6ox0q"),
+&"walk_right": SubResource("Animation_yvhr1"),
+&"walk_up": SubResource("Animation_7m4wn")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_behft"]
@@ -205,24 +206,28 @@ border_color = Color(1, 1, 1, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_lc3c6"]
 font = ExtResource("3_3h7eb")
 
+[sub_resource type="Curve2D" id="Curve2D_ux05a"]
+
 [node name="PlayerCharacter" type="CharacterBody2D"]
 script = ExtResource("1_12e7s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_n27h1")
+texture = ExtResource("2_iung0")
 hframes = 4
 vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(0, 3.25)
 shape = SubResource("RectangleShape2D_bs5tp")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_swch4")
+&"": SubResource("AnimationLibrary_swch4")
 }
 
 [node name="InteractionComponents" type="Node2D" parent="."]
+visible = false
 
 [node name="InteractionArea" type="Area2D" parent="InteractionComponents"]
 collision_layer = 2
@@ -389,6 +394,16 @@ offset_right = -196.0
 offset_bottom = -116.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ux05a")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(476, 58)
+rotates = false
+loop = false
+
+[node name="CharacterBody2D" parent="Path2D/PathFollow2D" instance=ExtResource("6_7htjj")]
 
 [connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]
 [connection signal="area_exited" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_exited"]

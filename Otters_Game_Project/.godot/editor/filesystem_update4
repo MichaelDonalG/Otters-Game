@@ -1,2 +1,4 @@
-res://Levels/battle.tscn
-res://Scripts/battle.gd
+res://Characters/player_character.tscn
+res://Scripts/player_character.gd
+res://Levels/game_level.tscn
+res://Dearn_town.tscn
