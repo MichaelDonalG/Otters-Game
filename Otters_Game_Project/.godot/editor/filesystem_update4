@@ -1,9 +1,2 @@
-res://Scripts/battle.gd
-res://Scripts/player_character.gd
 res://Levels/battle.tscn
-res://Levels/Enemy1.gd
-res://Scripts/battle_state.gd
-res://Levels/Enemy2.gd
-res://Scripts/Enemy1.gd
-res://Scripts/Enemy2.gd
-res://Scripts/state.gd
+res://Scripts/battle.gd

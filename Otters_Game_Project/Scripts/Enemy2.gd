@@ -18,7 +18,6 @@ func game_over():
 
 func enemy2_turn():
 	####ENEMY 2 ATTACKS####
-	print("Point 2")
 	if BattleState.enemy2_status != "dead":
 		$AttackEnemy2/AnimationPlayer.play("turn_start")
 		display_text("%s attacks" % State.enemy2.name)
@@ -34,7 +33,9 @@ func enemy2_turn():
 		
 		$"../player/AnimationPlayer".play("player_damaged")
 		await($"../player/AnimationPlayer".animation_finished)
-		if BattleState.current_player_health <= 0:
-			game_over()
+		
 		$AttackEnemy2/AnimationPlayer.play("turn_end")
-	$"..".player_turn()
+	if BattleState.current_player_health <= 0:
+			game_over()
+	else:
+		$"..".player_turn()

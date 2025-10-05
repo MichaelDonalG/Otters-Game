@@ -1,7 +1,7 @@
 extends Panel
 
 var text_array: Array
-var text counter = 0
+var text_counter = 0
 
 func _on_button_pressed() -> void:
 	

@@ -33,12 +33,11 @@ func enemy_turn():
 		
 		$"../player/AnimationPlayer".play("player_damaged")
 		await($"../player/AnimationPlayer".animation_finished)
-		if BattleState.current_player_health <= 0:
-			game_over()
+		
 		$AttackEnemy1/AnimationPlayer.play("turn_end")  #Move Sprite backwards
-	
-	if State.enemy2 != null:
-		print("Point 1")
+	if BattleState.current_player_health <= 0:
+			game_over()
+	elif State.enemy2 != null:
 		$"../EnemyContainer2".enemy2_turn()
 	else:
 		$"..".player_turn()

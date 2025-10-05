@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	
+	BattleState.playerTurn = 1
 	
 	####SET PLAYER START####
 	$player.texture = load("res://Art/Battle Icons/"+ State.pos1Char +".png")
@@ -31,6 +31,7 @@ func _ready():
 	####SET ENEMY START####
 	set_health($EnemyContainer/VBoxContainer/ProgressBar, State.enemy1.health, State.enemy1.health)
 	$EnemyContainer/AttackEnemy1.texture_normal = State.enemy1.texture
+	BattleState.enemy1_status = "alive"
 	
 	BattleState.enemy1_health = State.enemy1.health
 	
@@ -40,6 +41,7 @@ func _ready():
 		
 		set_health($EnemyContainer2/VBoxContainer/ProgressBar, State.enemy2.health, State.enemy2.health)
 		$EnemyContainer2/AttackEnemy2.texture_normal = State.enemy2.texture
+		BattleState.enemy2_status = "alive"
 		
 		BattleState.enemy2_health = State.enemy2.health
 		
@@ -124,10 +126,8 @@ func _on_attack_enemy_1_pressed():
 		2:
 			BattleState.enemy1_health = max(0, BattleState.enemy1_health - State.P2_damage)
 		3:
-			BattleState.enemy2_health = max(0, BattleState.enemy2_health - State.P3_damage)
+			BattleState.enemy1_health = max(0, BattleState.enemy1_health - State.P3_damage)
 	set_health($EnemyContainer/VBoxContainer/ProgressBar, BattleState.enemy1_health, State.enemy1.health)
-	if State.enemy2 != null:
-		set_health($EnemyContainer2/VBoxContainer/ProgressBar, BattleState.enemy2_health, State.enemy2.health)
 	
 	$AnimationPlayer.play("enemy1_damaged")
 	await($AnimationPlayer.animation_finished)
