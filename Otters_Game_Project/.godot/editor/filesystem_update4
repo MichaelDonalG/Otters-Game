@@ -1,4 +1,8 @@
-res://Characters/player_character.tscn
-res://Scripts/player_character.gd
-res://Levels/game_level.tscn
 res://Dearn_town.tscn
+res://Scripts/battle_state.gd
+res://Scripts/Enemy1.gd
+res://Scripts/battle.gd
+res://Levels/battle.tscn
+res://Scripts/Enemy2.gd
+res://Characters/Cow.tres
+res://Characters/Cow2.tres

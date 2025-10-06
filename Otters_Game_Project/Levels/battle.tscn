@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://colt26f7oy7l5"]
+[gd_scene load_steps=58 format=3 uid="uid://colt26f7oy7l5"]
 
 [ext_resource type="Script" uid="uid://bywdsomrkwwva" path="res://Scripts/battle.gd" id="1_rxw0g"]
 [ext_resource type="Texture2D" uid="uid://dbx1i8njmovsx" path="res://Art/BattleAnim.png" id="2_huckk"]
@@ -168,9 +168,24 @@ tracks/0/keys = {
 "values": [Vector2(228, 121), Vector2(210, 121)]
 }
 
+[sub_resource type="Animation" id="Animation_srg80"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u3scq"]
 _data = {
 &"RESET": SubResource("Animation_0nhpk"),
+&"player_damaged": SubResource("Animation_srg80"),
 &"turn_end": SubResource("Animation_m1e1r"),
 &"turn_start": SubResource("Animation_6a448")
 }
@@ -222,9 +237,25 @@ tracks/0/keys = {
 "values": [Vector2(228, 151), Vector2(210, 151)]
 }
 
+[sub_resource type="Animation" id="Animation_8ll0p"]
+resource_name = "player_damaged"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true, false, true, false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_edid2"]
 _data = {
 &"RESET": SubResource("Animation_gf6gc"),
+&"player_damaged": SubResource("Animation_8ll0p"),
 &"turn_end": SubResource("Animation_lbf6h"),
 &"turn_start": SubResource("Animation_ouhv5")
 }

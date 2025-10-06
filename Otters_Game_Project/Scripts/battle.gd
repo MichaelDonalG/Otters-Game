@@ -25,7 +25,9 @@ func _ready():
 			$PlayerPanel/VBoxContainer/Player3Data/HealthContainer/Label.text = str($PlayerPanel/VBoxContainer/Player3Data/HealthContainer/ProgressBar.value)
 	
 	
-	BattleState.current_player_health = State.P1_current_health
+	BattleState.current_player1_health = State.P1_current_health
+	BattleState.current_player2_health = State.P2_current_health
+	BattleState.current_player3_health = State.P3_current_health
 	
 	####SET PLAYER COMPLETE####
 	####SET ENEMY START####
@@ -76,16 +78,42 @@ func player_turn():
 	$ActionsPanel.show()
 	match BattleState.playerTurn:
 		1:
-			$player/AnimationPlayer.play("turn_start")
+			if BattleState.current_player1_health <= 0:
+				if BattleState.playerTurn == BattleState.partySize:
+					BattleState.playerTurn = 1
+					$EnemyContainer.enemy_turn()
+				else:
+					BattleState.playerTurn = BattleState.playerTurn+1
+					player_turn()
+			else:
+				$player/AnimationPlayer.play("turn_start")
 		2:
-			$player2/AnimationPlayer.play("turn_start")
+			if BattleState.current_player2_health <= 0:
+				if BattleState.playerTurn == BattleState.partySize:
+					BattleState.playerTurn = 1
+					$EnemyContainer.enemy_turn()
+				else:
+					BattleState.playerTurn = BattleState.playerTurn+1
+					player_turn()
+			else:
+				$player2/AnimationPlayer.play("turn_start")
 		3:
-			$player3/AnimationPlayer.play("turn_start")
+			if BattleState.current_player3_health <= 0:
+				if BattleState.playerTurn == BattleState.partySize:
+					BattleState.playerTurn = 1
+					$EnemyContainer.enemy_turn()
+				else:
+					BattleState.playerTurn = BattleState.playerTurn+1
+					player_turn()
+			else:
+				$player3/AnimationPlayer.play("turn_start")
 
 func _on_run_pressed():
 	display_text("Got away safely")
 	await(get_tree().create_timer(0.5).timeout)
-	State.P1_current_health = BattleState.current_player_health
+	State.P1_current_health = BattleState.current_player1_health
+	State.P2_current_health = BattleState.current_player2_health
+	State.P3_current_health = BattleState.current_player3_health
 	get_tree().change_scene_to_file("res://Levels/game_level.tscn")
 
 
@@ -182,7 +210,9 @@ func check_if_victory():
 		3:
 			$player3/AnimationPlayer.play("turn_end")
 	if BattleState.enemy1_status == "dead" && BattleState.enemy2_status == "dead":
-		State.P1_current_health = BattleState.current_player_health
+		State.P1_current_health = BattleState.current_player1_health
+		State.P2_current_health = BattleState.current_player2_health
+		State.P3_current_health = BattleState.current_player3_health
 		State.remove_enemy()
 		State.reset()
 		get_tree().change_scene_to_file("res://Levels/game_level.tscn")
