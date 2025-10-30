@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://jh7wlp4orkth"]
+
+[ext_resource type="Script" uid="uid://c2wmrwawey2cj" path="res://Scripts/BaseMove.gd" id="1_oxb2w"]
+
+[resource]
+script = ExtResource("1_oxb2w")
+effectiveVar = 2.0
+moveText = "unleashes a mighty Stomp!"

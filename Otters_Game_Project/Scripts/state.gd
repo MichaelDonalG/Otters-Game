@@ -62,10 +62,10 @@ func reset():
 	enemy2 = null
 
 func load_enemy():
-	enemy1 = load("res://Characters/"+enemy_type1+".tres")
+	enemy1 = load("res://Enemies/"+enemy_type1+".tres")
 	
 	if  enemy_type2 != "null":
-		enemy2 = load("res://Characters/"+enemy_type2+".tres")
+		enemy2 = load("res://Enemies/"+enemy_type2+".tres")
 
 func set_stats():
 	match pos1Char:

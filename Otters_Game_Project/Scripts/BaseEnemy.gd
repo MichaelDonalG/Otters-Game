@@ -4,3 +4,4 @@ extends Resource
 @export var texture:Resource = null
 @export var health:int = 30
 @export var damage:int = 10
+@export var moveList : Array[Resource]

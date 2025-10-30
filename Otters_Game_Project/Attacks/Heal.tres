@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://doswdfwl51vuy"]
+
+[ext_resource type="Script" uid="uid://c2wmrwawey2cj" path="res://Scripts/BaseMove.gd" id="1_7en54"]
+
+[resource]
+script = ExtResource("1_7en54")
+moveType = "heal"
+moveText = "heals"

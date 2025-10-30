@@ -1,0 +1,7 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://d08r4tvl2o5a"]
+
+[ext_resource type="Script" uid="uid://c2wmrwawey2cj" path="res://Scripts/BaseMove.gd" id="1_yi50t"]
+
+[resource]
+script = ExtResource("1_yi50t")
+moveText = "attacks!"
