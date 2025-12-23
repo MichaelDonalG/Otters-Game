@@ -97,6 +97,7 @@ tile_set = SubResource("TileSet_1sig8")
 position = Vector2(218, 73)
 
 [node name="Camera2D" type="Camera2D" parent="PlayerCharacter"]
+zoom = Vector2(4, 4)
 
 [node name="TextEdit" type="TextEdit" parent="."]
 offset_left = -275.0

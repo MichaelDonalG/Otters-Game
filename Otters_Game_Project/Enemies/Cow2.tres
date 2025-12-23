@@ -1,7 +1,7 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://bbnjca4j47dp2"]
 
-[ext_resource type="Resource" uid="uid://d08r4tvl2o5a" path="res://Attacks/BaseMove.tres" id="1_iexy8"]
-[ext_resource type="Resource" uid="uid://jh7wlp4orkth" path="res://Attacks/Stomp.tres" id="3_brac2"]
+[ext_resource type="Resource" uid="uid://d08r4tvl2o5a" path="res://Enemies/Attacks/BaseMove.tres" id="1_iexy8"]
+[ext_resource type="Resource" uid="uid://jh7wlp4orkth" path="res://Enemies/Attacks/Stomp.tres" id="3_brac2"]
 [ext_resource type="Script" uid="uid://bfeagwj67bt6f" path="res://Scripts/BaseEnemy.gd" id="4_xqxjv"]
 [ext_resource type="Texture2D" uid="uid://2bspidc70mdd" path="res://Art/Sprout Lands - Sprites - Basic pack/Characters/Cow Sprite 2.png" id="5_84giq"]
 

@@ -225,6 +225,7 @@ position = Vector2(153, 108)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(47, 25)
+zoom = Vector2(4, 4)
 
 [node name="PlayerCharacter" parent="." instance=ExtResource("1_2ojkx")]
 z_index = 1
