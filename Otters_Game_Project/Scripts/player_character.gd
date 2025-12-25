@@ -130,28 +130,7 @@ func execute_interaction():
 
 ###############UI Functions#############
 func set_health():
-	$PlayerPanel/VBoxContainer/PlayerData/Label.text = State.pos1Char
-	$PlayerPanel/VBoxContainer/PlayerData/ProgressBar.value = State.P1_current_health
-	$PlayerPanel/VBoxContainer/PlayerData/ProgressBar.max_value = State.P1_max_health
-	if State.pos2Char == "empty":
-		$PlayerPanel/VBoxContainer/PlayerData2/Label.text = "empty"
-		$PlayerPanel/VBoxContainer/PlayerData2.hide()
-		$PlayerPanel/VBoxContainer/PlayerData3.hide()
-	else:
-		$PlayerPanel/VBoxContainer/PlayerData2/Label.text = State.pos2Char
-		$PlayerPanel/VBoxContainer/PlayerData2.show()
-		$PlayerPanel/VBoxContainer/PlayerData3.show()
-		
-		$PlayerPanel/VBoxContainer/PlayerData2/ProgressBar.value = State.P2_current_health
-		$PlayerPanel/VBoxContainer/PlayerData2/ProgressBar.max_value = State.P2_max_health
-		
-		if State.pos3Char == "empty":
-			$PlayerPanel/VBoxContainer/PlayerData3/Label.text = "empty"
-			$PlayerPanel/VBoxContainer/PlayerData3.hide()
-		else:
-			$PlayerPanel/VBoxContainer/PlayerData3/Label.text = State.pos3Char
-			$PlayerPanel/VBoxContainer/PlayerData3/ProgressBar.value = State.P1_current_health
-			$PlayerPanel/VBoxContainer/PlayerData3/ProgressBar.max_value = State.P1_max_health
+	pass
 
 ################Follower Functions######################
 func add_point_to_path(new_point: Vector2):

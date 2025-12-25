@@ -66,7 +66,8 @@ var next_tetromino_type: Array
 var rotation_index: int = 0
 var active_tetromino: Array = []
 
-var is_game_running: bool
+var is_game_running: bool = false
+var is_dead:bool = false
 var tile_id: int = 0
 var piece_atlas: Vector2i
 var next_piece_atlas: Vector2i
@@ -75,18 +76,12 @@ var next_piece_atlas: Vector2i
 @onready var active_layer: TileMapLayer = $Active
 
 
-func _ready() -> void:
-	start_new_game()
-
-func start_new_game() -> void:
-	is_game_running = true
-	clear_tetromino()
-	clear_board()
-	current_tetromino_type = choose_tetromino()
-	piece_atlas = Vector2i(all_tetrominoes.find(current_tetromino_type), 0)
-	next_tetromino_type = choose_tetromino()
-	next_piece_atlas = Vector2i(all_tetrominoes.find(next_tetromino_type), 0)
+func tetris_next_turn() -> void:
+	$".".show()
+	current_tetromino_type = next_tetromino_type
+	piece_atlas = next_piece_atlas
 	initialize_tetromino()
+	is_game_running = true
 
 func _physics_process(delta: float) -> void:
 	if is_game_running:
@@ -111,17 +106,6 @@ func _physics_process(delta: float) -> void:
 		if fall_timer >= current_fall_interval:
 			move_tetromino(Vector2i.DOWN)
 			fall_timer = 0
-
-func choose_tetromino() -> Array:
-	var selected_tetromino: Array
-	if not tetrominoes.is_empty():
-		tetrominoes.shuffle()
-		selected_tetromino = tetrominoes.pop_front()
-	else:
-		tetrominoes = all_tetrominoes.duplicate()
-		tetrominoes.shuffle()
-		selected_tetromino = tetrominoes.pop_front()
-	return selected_tetromino
 
 func initialize_tetromino() -> void:
 	current_position = START_POSITION
@@ -151,12 +135,10 @@ func move_tetromino(direction: Vector2i) -> void:
 	else:
 		if direction == Vector2i.DOWN:
 			land_tetromino()
-			current_tetromino_type = next_tetromino_type
-			piece_atlas = next_piece_atlas
-			next_tetromino_type = choose_tetromino()
-			next_piece_atlas = Vector2i(all_tetrominoes.find(next_tetromino_type), 0)
-			initialize_tetromino()
+			is_game_running = false
 			is_game_over()
+			$".".hide()
+			$"../..".decide_next_turn()
 
 func land_tetromino() -> void:
 	for i in active_tetromino:
@@ -196,3 +178,4 @@ func is_game_over() -> void:
 		if not is_within_bounds(i + current_position):
 			land_tetromino()
 			is_game_running = false
+			is_dead = true

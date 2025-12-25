@@ -1,8 +1,6 @@
-[gd_resource type="Resource" load_steps=6 format=3 uid="uid://l3swlf5qrifg"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://l3swlf5qrifg"]
 
 [ext_resource type="Resource" uid="uid://d08r4tvl2o5a" path="res://Enemies/Attacks/BaseMove.tres" id="1_ydk83"]
-[ext_resource type="Resource" uid="uid://jh7wlp4orkth" path="res://Enemies/Attacks/Stomp.tres" id="2_7yvuw"]
-[ext_resource type="Resource" uid="uid://doswdfwl51vuy" path="res://Enemies/Attacks/Heal.tres" id="3_ghlxl"]
 [ext_resource type="Script" uid="uid://bfeagwj67bt6f" path="res://Scripts/BaseEnemy.gd" id="4_j6uay"]
 [ext_resource type="Texture2D" uid="uid://dwl1r0b61xiav" path="res://Art/Sprout Lands - Sprites - Basic pack/Characters/Free Cow Enemy Sprites.png" id="5_n3syw"]
 
@@ -10,6 +8,5 @@
 script = ExtResource("4_j6uay")
 name = "Cow"
 texture = ExtResource("5_n3syw")
-health = 50
 damage = 40
-moveList = Array[Resource]([ExtResource("1_ydk83"), ExtResource("2_7yvuw"), ExtResource("3_ghlxl")])
+moveList = Array[Resource]([ExtResource("1_ydk83")])

@@ -6,9 +6,6 @@ func display_text(text):
 	$"../TextBox".show()
 	$"../TextBox/Text".text = text
 
-func set_health(progress_bar, health, max_health):
-	progress_bar.value = health
-	progress_bar.max_value = max_health
 
 func game_over():
 	display_text("You have died")
@@ -22,7 +19,7 @@ func enemy2_turn():
 	
 	if State.enemy2.moveList[chosenMove].moveType == "melee":
 		####ENEMY 2 ATTACKS####
-		if BattleState.enemy2_status != "dead":
+		if BattleState.enemy2_status != false:
 			$AttackEnemy2/AnimationPlayer.play("turn_start")
 			display_text(str(State.enemy2.name, " ", State.enemy2.moveList[chosenMove].moveText))
 			await get_tree().create_timer(1.0). timeout
@@ -34,56 +31,40 @@ func enemy2_turn():
 				3:
 					BattleState.enemyTarget = rng.randi_range(1,3)
 			
-			if BattleState.current_player1_health <=0 and BattleState.enemyTarget == 1:
+			if BattleState.player1_status == false and BattleState.enemyTarget == 1: #Changes targetted player if current target is downed
 				BattleState.enemyTarget = 2
-			if BattleState.current_player2_health <=0 and BattleState.enemyTarget == 2:
+			if BattleState.player2_status == false and BattleState.enemyTarget == 2:
 				BattleState.enemyTarget = 3
-			if BattleState.current_player3_health <=0 and BattleState.enemyTarget == 3:
+			if BattleState.player3_status == false and BattleState.enemyTarget == 3:
 				BattleState.enemyTarget = 1
 			
 			match BattleState.enemyTarget: #Targets the randomly selected target
 				1:
-					if BattleState.P1_is_defending:
-						BattleState.P1_is_defending = false
-						BattleState.current_player1_health = max(0, BattleState.current_player1_health - State.enemy2.damage*State.enemy2.moveList[chosenMove].effectiveVar/2)
-					else:
-						BattleState.current_player1_health = max(0, BattleState.current_player1_health - State.enemy2.damage*State.enemy2.moveList[chosenMove].effectiveVar)
-					set_health($"../PlayerPanel/VBoxContainer/PlayerData/HealthContainer/ProgressBar", BattleState.current_player1_health, State.Max_Health)
-					$"../PlayerPanel/VBoxContainer/PlayerData/HealthContainer/Label".text = str($"../PlayerPanel/VBoxContainer/PlayerData/HealthContainer/ProgressBar".value)
+					#Play tetris on player 1
+					$"../player/tetris".next_tetromino_type = State.enemy2.moveList[chosenMove].damageType
+					$"../player/tetris".tetris_next_turn()
 					
 					$"../player/AnimationPlayer".play("player_damaged")
 					await($"../player/AnimationPlayer".animation_finished)
 				2:
-					if BattleState.P2_is_defending:
-						BattleState.P2_is_defending = false
-						BattleState.current_player2_health = max(0, BattleState.current_player2_health - State.enemy2.damage*State.enemy2.moveList[chosenMove].effectiveVar/2)
-					else:
-						BattleState.current_player2_health = max(0, BattleState.current_player2_health - State.enemy2.damage*State.enemy2.moveList[chosenMove].effectiveVar)
-					set_health($"../PlayerPanel/VBoxContainer/Player2Data/HealthContainer/ProgressBar", BattleState.current_player2_health, State.Max_Health)
-					$"../PlayerPanel/VBoxContainer/Player2Data/HealthContainer/Label".text = str($"../PlayerPanel/VBoxContainer/Player2Data/HealthContainer/ProgressBar".value)
+					#Play tetris on player 2
+					$"../player2/tetris".next_tetromino_type = State.enemy2.moveList[chosenMove].damageType
+					$"../player2/tetris".tetris_next_turn()
 					
 					$"../player2/AnimationPlayer".play("player_damaged")
 					await($"../player2/AnimationPlayer".animation_finished)
 				3:
-					if BattleState.P3_is_defending:
-						BattleState.P3_is_defending = false
-						BattleState.current_player3_health = max(0, BattleState.current_player3_health - State.enemy2.damage*State.enemy2.moveList[chosenMove].effectiveVar/2)
-					else:
-						BattleState.current_player3_health = max(0, BattleState.current_player3_health - State.enemy2.damage*State.enemy2.moveList[chosenMove].effectiveVar)
-					set_health($"../PlayerPanel/VBoxContainer/Player3Data/HealthContainer/ProgressBar", BattleState.current_player3_health, State.Max_Health)
-					$"../PlayerPanel/VBoxContainer/Player3Data/HealthContainer/Label".text = str($"../PlayerPanel/VBoxContainer/Player3Data/HealthContainer/ProgressBar".value)
+					#Play tetris on player 3
+					$"../player3/tetris".next_tetromino_type = State.enemy2.moveList[chosenMove].damageType
+					$"../player3/tetris".tetris_next_turn()
 					
 					$"../player3/AnimationPlayer".play("player_damaged")
 					await($"../player3/AnimationPlayer".animation_finished)
-					
-	elif State.enemy2.moveList[chosenMove].moveType == "heal":
-		pass
-		
 		
 		
 		
 	$AttackEnemy2/AnimationPlayer.play("turn_end")
-	if BattleState.current_player1_health <= 0 and BattleState.current_player2_health <=0 and BattleState.current_player3_health <=0:
+	if $"../player/tetris".is_dead and $"../player2/tetris".is_dead and $"../player3/tetris".is_dead:
 			game_over()
 	else:
-		$"..".player_turn()
+		$"..".decide_next_turn()
