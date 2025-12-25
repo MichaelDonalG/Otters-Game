@@ -9,6 +9,6 @@
 script = ExtResource("4_xqxjv")
 name = "Cow2"
 texture = ExtResource("5_84giq")
-health = 20
+speed = 9
 damage = 80
 moveList = Array[Resource]([ExtResource("1_iexy8"), ExtResource("1_iexy8"), ExtResource("3_brac2")])

@@ -1,16 +1,19 @@
 extends Node
 
-var enemy1_health = 0
-var enemy2_health = 0
-var enemy1_status = "alive"
-var enemy2_status = "alive"
+var player1_status: bool = true
+var player2_status: bool = true
+var player3_status: bool = true
 
-var current_player1_health = 0
-var current_player2_health = 0
-var current_player3_health = 0
-var P1_is_defending = false
-var P2_is_defending = false
-var P3_is_defending = false
+var curr_player1_speed: int
+var curr_player2_speed: int
+var curr_player3_speed: int
+
+var enemy1_status: bool = true
+var enemy2_status: bool = true
+
+var curr_enemy1_speed: int
+var curr_enemy2_speed: int
+
 var playerTurn = 1
 var partySize = 1
 
